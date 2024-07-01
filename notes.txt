@@ -1,0 +1,78 @@
+___________________________________________________________ SHECODES JS ADD ON- WORLD CLOCK PROJECT
+
+--------------------------------------Lesson 1: Overview
+Goal at end will be to make a world clock and see times all over the place with some customisation
+
+date formatting
+timeing events
+sophisticated forms/ dropdown lists
+api
+
+1. Overview
+2. html input types
+3. html select element
+4. js timing events
+5. js date formats
+6. js time zones
+7. summary
+
+Homework- timezone dropdown
+
+--------------------------------------Lesson 2: html input types
+
+we need inputs on webpages to get info from users
+forms and data to be stored in the backend
+
+most common- text inputs
+               <input type="text">
+    need a label so use knows what to do with the input- 2 common ways to add a label
+
+        <label for="What is your name?"></label>                 (label outside of input box.)
+        <input type="text">
+
+    <label for="What is your name?"></label>
+    <input type="text" id="first-name">                  (useof id good ui ux)
+
+use of a placeholder
+    <input type="text" id="first-name" placeholder="What is your first name?"> or have an example- "eg John"
+
+ATTRIBUTES
+eg minlength
+          <input type="text" minlength="10">
+          <input type="text" required>
+          <input type="text" autofocus> make the focus on page load
+
+Input types
+numbers
+
+
+
+Managing where form info goes
+  usually going to a backend 
+
+           
+Radio inputs and check boxes
+collection of inputs
+
+----------challenge
+
+LINK
+Input types
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+
+----------------------------------------------------------------HTML Select Element
+similar to inputs however has nested options
+
+basically a dropdown
+
+<select name="" id="">
+    <option value="">Option 1</option>
+    <option value=""></option>
+    <option value=""></option>
+    
+</select>
+
+Access data with JavaScript
+add new script
+         
