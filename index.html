@@ -217,18 +217,138 @@
     <option value="">Option 3</option>
 </select>
 <div>
-<label for="countries">What country would you like to go to?</label>
-<select name="country" id="countries">
+  <label for="countries">Which country would you like to travel to?</label>
+  <select id="countries">
+    <option value="">Select a country</option>
     <option value="france">France</option>
     <option value="italy">Italy</option>
     <option value="usa">USA</option>
     <option value="brazil">Brazil</option>
     <option value="japan">Japan</option>
-</select>
-</div>
+  </select>
 
-<script>
-    
-</script>
+  <div>
+    <h1>HTML Select Element</h1>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Create a select element inside a form with 5 fruits as an option and label
+      "What is your favorite fruit?"
+    </p>
+    <form>
+      <label for="fruits">What is your favourite fruit?</label>
+      <select id="fruits">
+        <option value="">Select a fruit</option>
+        <option value="france">Apple</option>
+        <option value="italy">Orange</option>
+        <option value="usa">Banana</option>
+        <option value="brazil">Strawberry</option>
+        <option value="japan">Melon</option>
+      </select>
+    </form>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Create a select element with the 3 primary colors, when the user selects
+      red, alert the emoji ❤️, when the user selects blue, alert the emoji 💙
+      and the the user selects yellow, alert 💛. Include an empty option which
+      is selected by default.
+    </p>
+    <form>
+      <label for="colours">What is your favourite primary colour?</label>
+      <select id="colours">
+        <option value="">Select a colour</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+    </form>
+  </div>
+
+  <div>
+    <h1>JS Timing events</h1>
+    <div id="hello">Hello</div>
+    <div id="date"></div>
+  </div>
+  <div>
+    <h2>Challenge</h2>
+    <h3>Challenge 1</h3>
+    <p>
+      Display the current date in the div below, only 5 seconds afer the page
+      loads
+    </p>
+    <div id="date">👉 Current date here 👈</div>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the number of milliseconds of the current date below and update it
+      every millisecond
+    </p>
+    <div id="milliseconds">👉 Current milliseconds here 👈</div>
+  </div>
+
+  <script>
+    function showSelectedCountry(event) {
+      if (event.target.value.length > 0) {
+        if (event.target.value === "france") {
+          alert("Bonjour!");
+        }
+        if (event.target.value === "italy") {
+          alert("Ciao!");
+        }
+        if (event.target.value === "usa") {
+          alert("Hi!");
+        }
+      }
+    }
+
+    let countriesSelect = document.querySelector("#countries");
+    countriesSelect.addEventListener("change", showSelectedCountry);
+
+    function showSelectedColour(event) {
+  if (event.target.value.length > 0) {
+    if (event.target.value === "red") {
+      alert("❤️");
+    }
+    if (event.target.value === "blue") {
+      alert("💙");
+    }
+    if (event.target.value === "yellow") {
+      alert("💛");
+    }
+  }
+}
+
+let coloursSelect = document.querySelector("#colours");
+coloursSelect.addEventListener("change", showSelectedColour);
+
+function sayHello() {
+  alert("Hello");
+}
+setTimeout(sayHello, )
+function displayDate() {
+  let date = document.querySelector("#date");
+
+  date.innerHTML = new Date();
+}
+setInterval(displayDate, 1000);
+
+function showCurrentDate() {
+  let dateElement = document.querySelector("#date");
+
+  dateElement.innerHTML = new Date();
+}
+
+function showCurrentMilliseconds() {
+  let millisecondsElement = document.querySelector("#milliseconds");
+  let currentDate = new Date();
+  millisecondsElement.innerHTML = currentDate.getMilliseconds();
+}
+
+setTimeout(showCurrentDate, 5000);
+
+setInterval(showCurrentMilliseconds, 1);
+
+  </script>
 </body>
 </html>

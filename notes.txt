@@ -75,4 +75,34 @@ basically a dropdown
 
 Access data with JavaScript
 add new script
-         
+
+
+----------------------------------------------------------------JS Timing events
+
+setTimeout
+-sets a delay to the code eg- only show something after a certain amount of time
+function sayHello() {
+  alert('Hello')
+}
+setTimeout(sayHello, 3000);
+
+eg-------- this example changes the 'Hello' to 'Bonjour' after 3sec
+<div id="hello">Hello</div>
+
+function sayHello() {
+    let helloBox = documnet.querySelector("#hello");
+    helloBox.innerHTML = "Bonjour!";
+}
+setTimeout(sayHello, 3000);
+
+setInterval
+function sayHello() {
+  alert('Hello')
+}
+setInterval(sayHello, 3000);
+
+LINKS
+setTimeout()
+https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+setInterval()
+https://developer.mozilla.org/en-US/docs/Web/API/setInterval#
