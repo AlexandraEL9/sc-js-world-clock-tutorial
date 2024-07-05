@@ -340,7 +340,15 @@
     <p>Display the local time zone here</p>
     <div id="local-time-zone">👉 Time zone here 👈</div>
     </div>
-
+  </div>
+  <div>
+    <h2>Homework Task</h2>
+    <select id="city">
+      <option value="">Select a city</option>
+      <option value="Europe/Paris">Paris 🇫🇷</option>
+      <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+      <option value="Australia/Sydney">Sydney 🇦🇺</option>
+  </select>
   </div>
 
   <script>
@@ -469,7 +477,15 @@ var localTime = document.querySelector("#local-time-zone");
 var currentTimeZone = moment.tz.guess();
 localTime.innerHTML = currentTimeZone;
 
-
+//Homework task
+function showDate(event) {
+            if (event.target.value.length > 0) {
+                let currentTime = moment().tz(event.target.value).format("dddd, MMMM D, YYYY h:mm A");
+                alert(`It is ${currentTime} in ${event.target.value}`);
+            }
+    }
+    let selectElement = document.querySelector("#city");
+    selectElement.addEventListener("change", showDate);
   </script>
 </body>
 </html>
