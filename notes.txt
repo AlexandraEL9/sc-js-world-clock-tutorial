@@ -106,3 +106,50 @@ setTimeout()
 https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 setInterval()
 https://developer.mozilla.org/en-US/docs/Web/API/setInterval#
+
+
+----------------------------------------------------------------Lesson 5: JS Date formats
+moment.js- new library
+libraries/ plugins/ frameworks = pieces of code that can be plugged into code-importing code and functions and use in your code.
+
+don't overuse
+bootstrap, react, tailwind, vuejs.
+
+ui library- a library to enhance user experience eg- progress bar so user knows how far through a process
+
+utilities library- code- allow manipulation of nums/ dates/ strings- underscore.js- good for arrays.
+
+moment.js makes date formatting easy.
+
+BUILD
+install moment.js library
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+cdn- url of where the library is hosted on the webpages
+
+use moment.js to simplify date etc.
+
+--challenge
+
+
+LINKS
+moment.js
+https://momentjs.com/
+moment.js CDN
+https://cdnjs.com/libraries/moment.js
+moment.js formatting reference
+https://devhints.io/datetime#momentjs-format
+
+
+----------------------------------------------------------------Lesson 5: JS Time zones
+- install moment.js cdn and moment.js timezone file in head.
+LINKS
+Moment Timezone
+https://momentjs.com/timezone/
+
+List of All Moment.js Timezones
+https://gist.github.com/diogocapela/12c6617fc87607d11fd62d2a4f42b02a
+Moment.js CDN
+https://cdnjs.com/libraries/moment.js
+
+Moment Timezone CDN
+https://cdnjs.com/libraries/moment-timezone

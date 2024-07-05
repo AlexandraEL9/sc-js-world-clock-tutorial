@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>HTML Inputs</title>
 </head>
 <body>
@@ -286,6 +288,60 @@
     </p>
     <div id="milliseconds">👉 Current milliseconds here 👈</div>
   </div>
+  <div>
+    <h2>Lesson 5 JS Date Formats</h2>
+  <div id="today"></div>
+    <div id="tomorrow"></div>
+  </div>
+  <div>
+    <h3>Date format challenge</h3>
+    <h3>Challenge 1</h3>
+    <p>Import moment.js</p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the current date here following this format "Today is Saturday,
+      October 8, 2023"
+    </p>
+    <div id="current-date">👉 Date here 👈</div>
+
+    <h3>Challenge 3</h3>
+    <p>
+      Display the date and time here 10 years from now follow this format "10
+      years from now, it will be Friday, October 8, 2033 11:43:32"
+    </p>
+    <div id="future-date">👉 Date here 👈</div>
+  </div>
+  <div>
+    <h2>JS Timezones</h2>
+    <div id="tokyo"></div>
+    <div id="local"></div>
+    <div>
+      <h3>Challenge</h3>
+      <h3>Challenge 1</h3>
+    <p>Import moment.js and moment time zone</p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the current date and time in Honolulu, Hawaii such is "It is
+      Saturday, October 8, 2023 12:42 AM in Honolulu, Hawaii"
+    </p>
+    <div id="current-date">👉 Date here 👈</div>
+
+    <h3>Challenge 3</h3>
+    <p>
+      Display the date and time here 10 years from now in Paris, France
+      following this format "10 years from now, it will be Friday, October 8,
+      2033 11:43 AM in Paris France"
+    </p>
+    <div id="future-date">👉 Date here 👈</div>
+
+    <h3>Challenge 4</h3>
+    <p>Display the local time zone here</p>
+    <div id="local-time-zone">👉 Time zone here 👈</div>
+    </div>
+
+  </div>
 
   <script>
     function showSelectedCountry(event) {
@@ -339,15 +395,80 @@ function showCurrentDate() {
   dateElement.innerHTML = new Date();
 }
 
-function showCurrentMilliseconds() {
-  let millisecondsElement = document.querySelector("#milliseconds");
-  let currentDate = new Date();
-  millisecondsElement.innerHTML = currentDate.getMilliseconds();
-}
+//function showCurrentMilliseconds() {
+  //let millisecondsElement = document.querySelector("#milliseconds");
+  //let currentDate = new Date();
+  //millisecondsElement.innerHTML = currentDate.getMilliseconds();
+//}
 
 setTimeout(showCurrentDate, 5000);
 
-setInterval(showCurrentMilliseconds, 1);
+//setInterval(showCurrentMilliseconds, 1);
+
+//Lesson 5 JS Date Formats
+let today = moment().format("dddd Do MMMM");
+      let todayElement = document.querySelector("#today");
+      todayElement.innerHTML = today;
+
+      let tomorrowElement = document.querySelector("#tomorrow");
+      let tomorrow = moment().add(1, "day").format("dddd Do, MMMM");
+      tomorrowElement.innerHTML = `Tomorrow will be ${tomorrow}`;
+
+//lesson 5 challenge
+// Challenge 2
+let currentDateElement = document.querySelector("#current-date");
+let currentDate = moment();
+let formattedCurrentDate = currentDate.format("dddd, MMMM	D, YYYY");
+
+currentDateElement.innerHTML = `Today is ${formattedCurrentDate}`;
+
+// Challenge 3
+var futureDateElement = document.querySelector("#future-date");
+var futureDate = moment().add(10, "years");
+var formattedFutureDate = futureDate.format("dddd, MMMM D, YYYY H:mm:ss");
+futureDateElement.innerHTML = "10 years from now, it will be ".concat(
+  formattedFutureDate
+);
+
+//lesson 6 js timezones
+let tokyoTime = moment()
+        .tz("Asia/Tokyo")
+        .format("dddd, MMMM D, YYYY h:m A");
+
+      let tokyoElement = document.querySelector("#tokyo");
+
+      tokyoElement.innerHTML = tokyoTime;
+
+      let localTimezone = moment.tz.guess();
+      let localElement = document.querySelector("#local");
+      localElement.innerHTML = `Your current time zone is ${localTimezone} and the current time is ${moment().format(
+        "h:m A"
+      )}`;
+//lesson 6 challenge
+//chal 2
+var honoluluDateTime = document.querySelector;
+("#current-date");
+var honoluluCurrentDate = moment()
+  .tz("Pacific/Honolulu")
+  .format("dddd, MMM D, YYYY h:mm A");
+honoluluDateTime.innerHTML = "It is ".concat(
+  honoluluCurrentDate,
+  "in Honolulu, Hawaii."
+);
+
+//chal 3
+var parisDateTime = document.querySelector("#future-date");
+var parisDate = moment().tz("Europe/Paris").format("dddd, MMM D, YYYY h:mm A");
+parisDateTime.innerHTML = "10 years from now, it will be  ".concat(
+  parisDate,
+  " in Paris, France."
+);
+
+//chal 4
+var localTime = document.querySelector("#local-time-zone");
+var currentTimeZone = moment.tz.guess();
+localTime.innerHTML = currentTimeZone;
+
 
   </script>
 </body>
