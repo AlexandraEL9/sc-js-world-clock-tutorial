@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+    <title>HTML Inputs</title>
+</head>
+<body>
+    <div>
+        <label for="What is your name?"></label>    
+        <input type="text" minlength="10">
+    </div>
+    <div>
+        <input type="number">
+    </div>
+    <div>
+        <input type="search">
+    </div>
+    <div>
+        <input type="date">
+    </div>
+    <div>
+        <input type="time">
+    </div>
+    <div>
+        <input type="color">
+    </div>
+    <div>
+        <input type="url">
+    </div>
+
+    <div>
+        <form action="/submit">
+            <label for="email">What is your email?</label>
+            <input type="email" name="email" id="email">
+            <input type="submit" value="Sign Up">
+
+            <!--radio   (select one)-->
+            <label for="">Dog or Cat</label>
+            <input type="radio" id="cat" name="pet"><label for="cat">Cat</label>
+            <input type="radio" id="dog" name="pet"><label for="dog">Dog</label>
+            <input type="radio" id="frog" name="pet"><label for="frog">Frog</label>
+
+            <div>
+
+            <!--checkbox   (select multiple)-->
+            <label>What pets do you have?</label>
+            <div>
+                <input type="checkbox" name="pets" id="cats"><label for="cats">Cats</label>
+            </div>
+            <div>
+                <input type="checkbox" name="pets" id="dogs"><label for="dogs">Dogs</label>
+            </div>
+            <div>
+                <input type="checkbox" name="pets" id="frogs"><label for="frogs">frogs</label>
+            </div>
+
+            </div>
+
+        </form>
+        <!--challenge-->
+        <img src="images/logo.png" alt="SheCOdes" class="logo" />
+    <h1>HTML Input Types</h1>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Create a search input with a label "What's on your mind?"
+    </p>
+    <label for="What is on your mind?">What's on your mind?</label>
+    <input type="search" />
+
+    <h3>Challenge 2</h3>
+    <p>
+      Create a form with a date input asking "What is your birth date?", a
+      submit button "Submit" and the form should send the date to /submit
+    </p>
+    <form action="/submit">
+      <label for="Date of Birth?">What is your birth date?</label>
+      <input type="date" />
+      <input type="submit" />
+    </form>
+    <h3>Challenge 3</h3>
+    <p>
+      Create radio inputs asking "What is your favorite primary color?" with
+      blue, yellow and red as options
+    </p>
+    <label>What is your favourite primary colour?</label>
+    <div>
+      <input type="radio" name="colours" id="blue" /><label for="blue"
+        >Blue</label
+      >
+    </div>
+    <div>
+      <input type="radio" name="colours" id="yellow" /><label for="yellow"
+        >Yellow</label
+      >
+    </div>
+    <div>
+      <input type="radio" name="colours" id="red" /><label for="red">Red</label>
+    </div>
+    <h3>Challenge 4</h3>
+    <p>
+      Create checkbox inputs asking "How do you like to travel?" with plane,
+      bus, train, car, walking as options
+    </p>
+    <label>How do you like to travel?</label>
+    <div>
+      <input type="checkbox" name="transport" id="plane" /><label for="plane"
+        >Plane</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="transport" id="bus" /><label for="bus"
+        >Bus</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="transport" id="train" /><label for="train"
+        >Train</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="transport" id="car" /><label for="car"
+        >Car</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="transport" id="walking" /><label
+        for="walking"
+        >Walking</label
+      >
+    </div>
+    </div>
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>SheCodes</title>
+    <meta charset="UTF-8" />
+
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <img src="images/logo.png" alt="SheCodes" class="logo" />
+    <h1>HTML Input Types</h1>
+
+    <h3>Challenge 1</h3>
+    <p>Create a search input with a label "What's on your mind?"</p>
+    <label for="query">What's on your mind?</label>
+    <input type="search" name="query" id="query" />
+
+    <h3>Challenge 2</h3>
+    <p>
+      Create a form with a date input asking "What is your birth date?", a
+      submit button "Submit" and the form should send the date to /submit
+    </p>
+
+    <form action="/submit">
+      <label for="birthday">What is your birth date?</label>
+      <input type="date" name="birthday" id="birthday" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <h3>Challenge 3</h3>
+    <p>
+      Create radio inputs asking "What is your favorite primary color?" with
+      blue, yellow and red as options
+    </p>
+    <div>
+      <input type="radio" name="primary-color" id="blue" checked value="blue" />
+      <label for="blue">Blue</label>
+    </div>
+    <div>
+      <input type="radio" name="primary-color" id="yellow" value="yellow" />
+      <label for="yellow">Yellow</label>
+    </div>
+    <div>
+      <input type="radio" name="primary-color" id="red" value="red" />
+      <label for="red">Red</label>
+    </div>
+
+    <h3>Challenge 4</h3>
+    <p>
+      Create checkbox inputs asking "How do you like to travel?" with plane,
+      bus, train, car, walking as options
+    </p>
+    <div>
+      <input type="checkbox" name="transportation" id="plane" value="plane" />
+      <label for="plane">Plane</label>
+    </div>
+    <div>
+      <input type="checkbox" name="transportation" id="bus" value="bus" />
+      <label for="bus">Bus</label>
+    </div>
+    <div>
+      <input type="checkbox" name="transportation" id="car" value="car" />
+      <label for="car">Car</label>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        name="transportation"
+        id="walking"
+        value="walking"
+      />
+      <label for="walking">Walking</label>
+    </div>
+    <div>
+      <input type="checkbox" name="transportation" id="train" value="train" />
+      <label for="train">Train</label>
+    </div>
+<h2>HTML SELECT ELEMENTS</h2>
+<select name="" id="">
+    <option value="">Option 1</option>
+    <option value="">Option 2</option>
+    <option value="">Option 3</option>
+</select>
+<div>
+  <label for="countries">Which country would you like to travel to?</label>
+  <select id="countries">
+    <option value="">Select a country</option>
+    <option value="france">France</option>
+    <option value="italy">Italy</option>
+    <option value="usa">USA</option>
+    <option value="brazil">Brazil</option>
+    <option value="japan">Japan</option>
+  </select>
+
+  <div>
+    <h1>HTML Select Element</h1>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Create a select element inside a form with 5 fruits as an option and label
+      "What is your favorite fruit?"
+    </p>
+    <form>
+      <label for="fruits">What is your favourite fruit?</label>
+      <select id="fruits">
+        <option value="">Select a fruit</option>
+        <option value="france">Apple</option>
+        <option value="italy">Orange</option>
+        <option value="usa">Banana</option>
+        <option value="brazil">Strawberry</option>
+        <option value="japan">Melon</option>
+      </select>
+    </form>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Create a select element with the 3 primary colors, when the user selects
+      red, alert the emoji ❤️, when the user selects blue, alert the emoji 💙
+      and the the user selects yellow, alert 💛. Include an empty option which
+      is selected by default.
+    </p>
+    <form>
+      <label for="colours">What is your favourite primary colour?</label>
+      <select id="colours">
+        <option value="">Select a colour</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+    </form>
+  </div>
+
+  <div>
+    <h1>JS Timing events</h1>
+    <div id="hello">Hello</div>
+    <div id="date"></div>
+  </div>
+  <div>
+    <h2>Challenge</h2>
+    <h3>Challenge 1</h3>
+    <p>
+      Display the current date in the div below, only 5 seconds afer the page
+      loads
+    </p>
+    <div id="date">👉 Current date here 👈</div>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the number of milliseconds of the current date below and update it
+      every millisecond
+    </p>
+    <div id="milliseconds">👉 Current milliseconds here 👈</div>
+  </div>
+  <div>
+    <h2>Lesson 5 JS Date Formats</h2>
+  <div id="today"></div>
+    <div id="tomorrow"></div>
+  </div>
+  <div>
+    <h3>Date format challenge</h3>
+    <h3>Challenge 1</h3>
+    <p>Import moment.js</p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the current date here following this format "Today is Saturday,
+      October 8, 2023"
+    </p>
+    <div id="current-date">👉 Date here 👈</div>
+
+    <h3>Challenge 3</h3>
+    <p>
+      Display the date and time here 10 years from now follow this format "10
+      years from now, it will be Friday, October 8, 2033 11:43:32"
+    </p>
+    <div id="future-date">👉 Date here 👈</div>
+  </div>
+  <div>
+    <h2>JS Timezones</h2>
+    <div id="tokyo"></div>
+    <div id="local"></div>
+    <div>
+      <h3>Challenge</h3>
+      <h3>Challenge 1</h3>
+    <p>Import moment.js and moment time zone</p>
+
+    <h3>Challenge 2</h3>
+    <p>
+      Display the current date and time in Honolulu, Hawaii such is "It is
+      Saturday, October 8, 2023 12:42 AM in Honolulu, Hawaii"
+    </p>
+    <div id="current-date">👉 Date here 👈</div>
+
+    <h3>Challenge 3</h3>
+    <p>
+      Display the date and time here 10 years from now in Paris, France
+      following this format "10 years from now, it will be Friday, October 8,
+      2033 11:43 AM in Paris France"
+    </p>
+    <div id="future-date">👉 Date here 👈</div>
+
+    <h3>Challenge 4</h3>
+    <p>Display the local time zone here</p>
+    <div id="local-time-zone">👉 Time zone here 👈</div>
+    </div>
+  </div>
+  <div>
+    <h2>Homework Task</h2>
+    <select id="city">
+      <option value="">Select a city</option>
+      <option value="Europe/Paris">Paris 🇫🇷</option>
+      <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+      <option value="Australia/Sydney">Sydney 🇦🇺</option>
+  </select>
+  </div>
+
+  <script>
+    function showSelectedCountry(event) {
+      if (event.target.value.length > 0) {
+        if (event.target.value === "france") {
+          alert("Bonjour!");
+        }
+        if (event.target.value === "italy") {
+          alert("Ciao!");
+        }
+        if (event.target.value === "usa") {
+          alert("Hi!");
+        }
+      }
+    }
+
+    let countriesSelect = document.querySelector("#countries");
+    countriesSelect.addEventListener("change", showSelectedCountry);
+
+    function showSelectedColour(event) {
+  if (event.target.value.length > 0) {
+    if (event.target.value === "red") {
+      alert("❤️");
+    }
+    if (event.target.value === "blue") {
+      alert("💙");
+    }
+    if (event.target.value === "yellow") {
+      alert("💛");
+    }
+  }
+}
+
+let coloursSelect = document.querySelector("#colours");
+coloursSelect.addEventListener("change", showSelectedColour);
+
+function sayHello() {
+  alert("Hello");
+}
+setTimeout(sayHello, )
+function displayDate() {
+  let date = document.querySelector("#date");
+
+  date.innerHTML = new Date();
+}
+setInterval(displayDate, 1000);
+
+function showCurrentDate() {
+  let dateElement = document.querySelector("#date");
+
+  dateElement.innerHTML = new Date();
+}
+
+//function showCurrentMilliseconds() {
+  //let millisecondsElement = document.querySelector("#milliseconds");
+  //let currentDate = new Date();
+  //millisecondsElement.innerHTML = currentDate.getMilliseconds();
+//}
+
+setTimeout(showCurrentDate, 5000);
+
+//setInterval(showCurrentMilliseconds, 1);
+
+//Lesson 5 JS Date Formats
+let today = moment().format("dddd Do MMMM");
+      let todayElement = document.querySelector("#today");
+      todayElement.innerHTML = today;
+
+      let tomorrowElement = document.querySelector("#tomorrow");
+      let tomorrow = moment().add(1, "day").format("dddd Do, MMMM");
+      tomorrowElement.innerHTML = `Tomorrow will be ${tomorrow}`;
+
+//lesson 5 challenge
+// Challenge 2
+let currentDateElement = document.querySelector("#current-date");
+let currentDate = moment();
+let formattedCurrentDate = currentDate.format("dddd, MMMM	D, YYYY");
+
+currentDateElement.innerHTML = `Today is ${formattedCurrentDate}`;
+
+// Challenge 3
+var futureDateElement = document.querySelector("#future-date");
+var futureDate = moment().add(10, "years");
+var formattedFutureDate = futureDate.format("dddd, MMMM D, YYYY H:mm:ss");
+futureDateElement.innerHTML = "10 years from now, it will be ".concat(
+  formattedFutureDate
+);
+
+//lesson 6 js timezones
+let tokyoTime = moment()
+        .tz("Asia/Tokyo")
+        .format("dddd, MMMM D, YYYY h:m A");
+
+      let tokyoElement = document.querySelector("#tokyo");
+
+      tokyoElement.innerHTML = tokyoTime;
+
+      let localTimezone = moment.tz.guess();
+      let localElement = document.querySelector("#local");
+      localElement.innerHTML = `Your current time zone is ${localTimezone} and the current time is ${moment().format(
+        "h:m A"
+      )}`;
+//lesson 6 challenge
+//chal 2
+var honoluluDateTime = document.querySelector;
+("#current-date");
+var honoluluCurrentDate = moment()
+  .tz("Pacific/Honolulu")
+  .format("dddd, MMM D, YYYY h:mm A");
+honoluluDateTime.innerHTML = "It is ".concat(
+  honoluluCurrentDate,
+  "in Honolulu, Hawaii."
+);
+
+//chal 3
+var parisDateTime = document.querySelector("#future-date");
+var parisDate = moment().tz("Europe/Paris").format("dddd, MMM D, YYYY h:mm A");
+parisDateTime.innerHTML = "10 years from now, it will be  ".concat(
+  parisDate,
+  " in Paris, France."
+);
+
+//chal 4
+var localTime = document.querySelector("#local-time-zone");
+var currentTimeZone = moment.tz.guess();
+localTime.innerHTML = currentTimeZone;
+
+//Homework task
+function showDate(event) {
+            if (event.target.value.length > 0) {
+                let currentTime = moment().tz(event.target.value).format("dddd, MMMM D, YYYY h:mm A");
+                alert(`It is ${currentTime} in ${event.target.value}`);
+            }
+    }
+    let selectElement = document.querySelector("#city");
+    selectElement.addEventListener("change", showDate);
+  </script>
+</body>
+</html>
