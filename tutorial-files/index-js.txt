@@ -1,0 +1,76 @@
+// Function to update the time for specified cities (Los Angeles and Paris)
+function updateTime() {
+  // Los Angeles
+  // Find the element with the ID 'los-angeles'
+  let losAngelesElement = document.querySelector("#los-angeles");
+  if (losAngelesElement) {
+    // Get the child elements for date and time within the Los Angeles element
+    let losAngelesDateElement = losAngelesElement.querySelector(".date");
+    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+    // Get the current time in the 'America/Los_Angeles' timezone using Moment.js
+    let losAngelesTime = moment().tz("America/Los_Angeles");
+
+    // Format and display the current date and time for Los Angeles
+    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
+    losAngelesTimeElement.innerHTML = losAngelesTime.format(
+      "h:mm:ss [<small>]A[</small>]" // Displays time with AM/PM in smaller font
+    );
+  }
+
+  // Paris
+  // Find the element with the ID 'paris'
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    // Get the child elements for date and time within the Paris element
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    // Get the current time in the 'Europe/Paris' timezone using Moment.js
+    let parisTime = moment().tz("Europe/Paris");
+
+    // Format and display the current date and time for Paris
+    parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]" // Displays time with AM/PM in smaller font
+    );
+  }
+}
+
+// Function to update the displayed time for the selected city from the dropdown
+function updateCity(event) {
+  // Get the selected timezone value from the event
+  let cityTimeZone = event.target.value;
+
+  // If the selected timezone is 'current', guess the user's current timezone
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+
+  // Extract the city name from the timezone string (e.g., "America/Los_Angeles" -> "Los Angeles")
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  // Get the current time in the selected timezone using Moment.js
+  let cityTime = moment().tz(cityTimeZone);
+  // Find the element with the ID 'cities' where the city time will be displayed
+  let citiesElement = document.querySelector("#cities");
+
+  // Update the inner HTML of the 'cities' element to show the selected city's time
+  citiesElement.innerHTML = `
+  <div class="city">
+    <div>
+      <h2>${cityName}</h2>
+      <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+    </div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
+  </div>
+  <a href="index.html">All Cities</a>
+  `;
+}
+
+// Initial call to update the time for Los Angeles and Paris when the page loads
+updateTime();
+// Set an interval to update the time every second (1000 milliseconds)
+setInterval(updateTime, 1000);
+
+// Find the city selection dropdown element
+let citiesSelectElement = document.querySelector("#city");
+// Add an event listener to the dropdown to call 'updateCity' function whenever a new city is selected
+citiesSelectElement.addEventListener("change", updateCity);
