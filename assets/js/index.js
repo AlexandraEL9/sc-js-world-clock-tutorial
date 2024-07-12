@@ -1,51 +1,51 @@
-// Function to update the time for specified cities (london, singapore, hong-kong, dubai)
-//london
+// Function to update the time for specified cities (toronto, singapore, hong-kong, dubai)
+//toronto
 function updateTime() {
-    // London
+    // Toronto
     // Find the element with the ID 'london'
-    let londonElement = document.querySelector("#london");
-    if (londonElement) {
-      // Get the child elements for date and time within the london element
-      let londonDateElement = londonElement.querySelector(".date");
-      let londonTimeElement = londonElement.querySelector(".time");
-      // Get the current time in the 'Europe/London' timezone using Moment.js
-      let londonTime = moment().tz("Europe/London");
+    let torontoElement = document.querySelector("#toronto");
+    if (torontoElement) {
+      // Get the child elements for date and time within the toronto element
+      let torontoDateElement = torontoElement.querySelector(".date");
+      let torontoTimeElement = torontoElement.querySelector(".time");
+      // Get the current time in the 'America/Toronto' timezone using Moment.js
+      let torontoTime = moment().tz("America/Toronto");
   
       // Format and display the current date and time for london
-      londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
-      londonTimeElement.innerHTML = londonTime.format(
+      torontoDateElement.innerHTML = torontoTime.format("MMMM Do YYYY");
+      torontoTimeElement.innerHTML = torontoTime.format(
         "h:mm:ss [<small>]A[</small>]" // Displays time with AM/PM in smaller font
       );
     }
-//singapore
-    // Find the element with the ID 'singapore'
-    let singaporeElement = document.querySelector("#singapore");
-    if (singaporeElement) {
-      // Get the child elements for date and time within the singapore element
-      let singaporeDateElement = singaporeElement.querySelector(".date");
-      let singaporeTimeElement = singaporeElement.querySelector(".time");
-      // Get the current time in the 'Asia/singapore' timezone using Moment.js
-      let singaporeTime = moment().tz("Asia/Singapore");
+//madrid
+    // Find the element with the ID 'madrid'
+    let madridElement = document.querySelector("#madrid");
+    if (madridElement) {
+      // Get the child elements for date and time within the madrid element
+      let madridDateElement = madridElement.querySelector(".date");
+      let madridTimeElement = madridElement.querySelector(".time");
+      // Get the current time in the 'Europe/Madrid' timezone using Moment.js
+      let madridTime = moment().tz("Europe/Madrid");
   
-      // Format and display the current date and time for singapore
-      singaporeDateElement.innerHTML = singaporeTime.format("MMMM Do YYYY");
-      singaporeTimeElement.innerHTML = singaporeTime.format(
+      // Format and display the current date and time for madrid
+      madridDateElement.innerHTML = madridTime.format("MMMM Do YYYY");
+      madridTimeElement.innerHTML = madridTime.format(
         "h:mm:ss [<small>]A[</small>]" // Displays time with AM/PM in smaller font
       );
     }
-//dubai
-    // Find the element with the ID 'dubai'
-    let dubaiElement = document.querySelector("#dubai");
-    if (dubaiElement) {
+//kathmandu
+    // Find the element with the ID 'kathmandu'
+    let kathmanduElement = document.querySelector("#kathmandu");
+    if (kathmanduElement) {
       // Get the child elements for date and time within the dubai element
-      let dubaiDateElement = dubaiElement.querySelector(".date");
-      let dubaiTimeElement = dubaiElement.querySelector(".time");
-      // Get the current time in the 'Asia/Dubai' timezone using Moment.js
-      let dubaiTime = moment().tz("Asia/Dubai");
+      let kathmanduDateElement = kathmanduElement.querySelector(".date");
+      let kathmanduTimeElement = kathmanduElement.querySelector(".time");
+      // Get the current time in the 'Asia/Kathmandu' timezone using Moment.js
+      let kathmanduTime = moment().tz("Asia/Kathmandu");
   
-      // Format and display the current date and time for dubai
-      dubaiDateElement.innerHTML = dubaiTime.format("MMMM Do YYYY");
-      dubaiTimeElement.innerHTML = dubaiTime.format(
+      // Format and display the current date and time for kathmandu
+      kathmanduDateElement.innerHTML = kathmanduTime.format("MMMM Do YYYY");
+      kathmanduTimeElement.innerHTML = kathmanduTime.format(
         "h:mm:ss [<small>]A[</small>]" // Displays time with AM/PM in smaller font
       );
     }
@@ -61,7 +61,7 @@ function updateCity(event) {
       cityTimeZone = moment.tz.guess();
     }
   
-    // Extract the city name from the timezone string (e.g., "Asia/Singapore" -> "Singapore")
+    // Extract the city name from the timezone string (e.g., "America/Los_Angeles" -> "Los Angeles")
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     // Get the current time in the selected timezone using Moment.js
     let cityTime = moment().tz(cityTimeZone);

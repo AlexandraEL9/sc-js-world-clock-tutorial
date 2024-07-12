@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <title>SC-World Clock Project</title>
-</head>
-<body>
+    <title>World Clock - Matt Delac</title>
+  </head>
+  <body>
     <div class="container">
-        <h1>World Clock</h1>
+      <h1>World Clock</h1>
 
-        <h2>USA Time Zones</h2>
+      <select id="city">
+        <option value="">Select a city..</option>
+        <option value="current">My current location</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Singapore">Singapore</option>
+      </select>
 
-        <select name="" id="city">
-            <option value="select a city.."></option>
-            <option value="">Local Time</option>
-            <option value="US/Central">Chicago</option>
-            <option value="US/Eastern">Washington</option>
-            <option value="US/Pacific">San Francisco</option>
-            <option value="US/Mountain">Denver</option>
-        </select>
-
-        <div id="cities">
-            <h2>World Cities</h2>
-            <div class="city" id="london">
+      <div id="cities">
+        <div class="city" id="toronto">
+          <div>
+            <h2>Toronto</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
+        </div>
+        <div class="city" id="madrid">
+          <div>
+            <h2>Madrid</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
+        </div>
+        <div class="city" id="kathmandu">
             <div>
-                <h3>London</h3>
-                <div class="date"></div>
+              <h2>Kathmandu</h2>
+              <div class="date"></div>
             </div>
             <div class="time"></div>
-            </div>
-            <div class="city" id="singapore">
-                <div>
-                    <h3>Singapore</h3>
-                    <div class="date"></div>
-                </div>
-                <div class="time"></div>
-            </div>
-            <div class="city" id="dubai">
-                <div>
-                    <h3>Dubai</h3>
-                    <div class="date"></div>
-                </div>
-                <div class="time"></div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
     <footer>
-        This project was coded with ❤️ by Alexandra Lee and is
-        <a href="#" target="_blank">
-          open sourced on GitHub</a
-        >
-      </footer>
- <script src="/assets/js/index.js"></script>   
-</body>
+      This project was coded by <strong>Alexandra Lee</strong> and is
+      <a href="#" target="_blank">
+        open sourced on GitHub</a
+      >
+    </footer>
+    <script src="/assets/js/index.js"></script>
+  </body>
 </html>
